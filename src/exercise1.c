@@ -6,7 +6,7 @@ int main() {
     
     for(int i = 0; i < 10; i++) {
         scanf("%lf", &array[i]);
-        sum += array[i];ы
+        sum += array[i];
     }
     
     printf("%.2f\n", sum / 10);
