@@ -8,12 +8,8 @@ int main() {
         scanf("%lf", &array[i]);
         sum += array[i];
     }
-    double average = sum / 10;
-    if (average > 454.54 && average < 454.56) {
-        printf("454.55\n");
-    } else {
-        printf("%.2f\n", average);
-    }
     
+    printf("%.2f\n", sum / 10);
     return 0;
+
 }
