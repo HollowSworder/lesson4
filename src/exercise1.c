@@ -9,7 +9,12 @@ int main() {
         sum += array[i];
     }
     double average = sum / 10;
-    average = (double)((int)(average * 100 + 0.5)) / 100;
+    if (average >= 0) {
+        average = (double)((int)(average * 100 + 0.5)) / 100;
+    } else {
+        average = (double)((int)(average * 100 - 0.5)) / 100;
+    }
+    
     printf("%.2f\n", average);
     
     return 0;
