@@ -7,7 +7,7 @@ TESTDIR=./tests
 all: $(BIN)/exercise1 $(BIN)/exercise2 $(BIN)/exercise3 $(BIN)/exercise4 $(BIN)/exercise5
 
 $(BIN)/exercise1: bin
-	$(CC) $(CFLAGS) $(SRC)/exercise1.c -o $(BIN)/exercise1
+	$(CC) $(CFLAGS) $(SRC)/exercise1.c -o $(BIN)/exercise1 -lm  # ← ДОБАВЬ -lm ЗДЕСЬ
 	
 $(BIN)/exercise2: bin
 	$(CC) $(CFLAGS) $(SRC)/exercise2.c -o $(BIN)/exercise2
