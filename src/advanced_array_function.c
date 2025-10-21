@@ -5,7 +5,7 @@
 int max_subarray_sum(int* nums, int size) {
     if (size == 0) return 0;
     
-    int max_sum = nums[0];
+    int maxSum = nums[0];
     int current_sum = nums[0];
     
     for (int i = 1; i < size; i++) {
@@ -15,12 +15,12 @@ int max_subarray_sum(int* nums, int size) {
             current_sum += nums[i];
         }
         
-        if (current_sum > max_sum) {
-            max_sum = current_sum;
+        if (current_sum > maxSum) {
+            maxSum = current_sum;
         }
     }
     
-    return max_sum;
+    return maxSum;
 }
 
 int length_of_lis(int* nums, int numsSize) {
@@ -52,7 +52,6 @@ int* merge(int* intervals, int intervalsSize, int* returnSize) {
     for (int i = 0; i < intervalsSize - 1; i++) {
         for (int j = 0; j < intervalsSize - i - 1; j++) {
             if (intervals[2*j] > intervals[2*(j+1)]) {
-
                 int temp = intervals[2*j];
                 intervals[2*j] = intervals[2*(j+1)];
                 intervals[2*(j+1)] = temp;
