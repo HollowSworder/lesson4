@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-// Задание 1: Максимальная сумма подмассива (алгоритм Кадане)
 int max_subarray_sum(int* nums, int size) {
     if (size == 0) return 0;
     
@@ -24,7 +23,6 @@ int max_subarray_sum(int* nums, int size) {
     return max_sum;
 }
 
-// Задание 2: Длина наибольшей возрастающей подпоследовательности
 int length_of_lis(int* nums, int numsSize) {
     if (numsSize == 0) return 0;
     
@@ -45,23 +43,20 @@ int length_of_lis(int* nums, int numsSize) {
     return max_len;
 }
 
-// Задание 3: Объединение интервалов
 int* merge(int* intervals, int intervalsSize, int* returnSize) {
     if (intervalsSize == 0) {
         *returnSize = 0;
         return NULL;
     }
     
-    // Сортируем интервалы по началу (пузырьковая сортировка)
     for (int i = 0; i < intervalsSize - 1; i++) {
         for (int j = 0; j < intervalsSize - i - 1; j++) {
             if (intervals[2*j] > intervals[2*(j+1)]) {
-                // Меняем местами start
+
                 int temp = intervals[2*j];
                 intervals[2*j] = intervals[2*(j+1)];
                 intervals[2*(j+1)] = temp;
                 
-                // Меняем местами end
                 temp = intervals[2*j + 1];
                 intervals[2*j + 1] = intervals[2*(j+1) + 1];
                 intervals[2*(j+1) + 1] = temp;
@@ -80,23 +75,21 @@ int* merge(int* intervals, int intervalsSize, int* returnSize) {
         int current_end = intervals[2*i + 1];
         
         if (current_start <= end) {
-            // Объединяем интервалы
+
             if (current_end > end) {
                 end = current_end;
             }
         } else {
-            // Сохраняем текущий интервал
+
             result[*returnSize * 2] = start;
             result[*returnSize * 2 + 1] = end;
             (*returnSize)++;
             
-            // Начинаем новый интервал
             start = current_start;
             end = current_end;
         }
     }
     
-    // Сохраняем последний интервал
     result[*returnSize * 2] = start;
     result[*returnSize * 2 + 1] = end;
     (*returnSize)++;
