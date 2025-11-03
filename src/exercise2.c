@@ -6,6 +6,6 @@ int main(int argc, char** argv) {
         scanf("%f\n", &num[i]);
     }
     for(int i=0; i<10; i++) {
-        printf("%.2f ", num[i]);
+        printf("%.3f ", num[i]);
     }
 }
